@@ -47,13 +47,10 @@ export default function Home() {
 
               <div className="space-y-4 text-zinc-400 text-base leading-relaxed max-w-lg">
                 <p>
-                  Nulla posuere tortor sed semper scelerisque. Etiam ornare est malesuada
-                  gravida sodales vel, imperdiet ac molestie nisl. Orci varius natoque penatibus
-                  magna nisl duis parturient mauris, nascetur ridiculus mus.
+                  Passion saya adalah menciptakan produk digital yang berdampak dan mudah digunakan. Saya selalu berusaha menggabungkan kreativitas, teknologi, dan user experience dalam setiap project yang saya kerjakan.
                 </p>
                 <p>
-                  Fusce posuere quis sem quis efficitur. Etiam ac cursus tellus a rutrum erat.
-                  Cras eleifend tellus a nulla quis viverra turpis risus.
+                   Saya selalu berusaha menggabungkan kreativitas, teknologi, dan user experience dalam setiap project yang saya kerjakan.
                 </p>
               </div>
 
