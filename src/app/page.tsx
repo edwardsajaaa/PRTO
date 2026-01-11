@@ -78,10 +78,14 @@ export default function Home() {
               className="relative lg:h-[600px] h-[500px]"
             >
               <div className="relative w-full h-full bg-zinc-800 rounded-lg overflow-hidden">
-                {/* Placeholder for image - user will add their own */}
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-zinc-800 to-zinc-900">
-                  <p className="text-zinc-500 text-lg">Your Photo Here</p>
-                </div>
+                {/* Profile photo */}
+                <Image
+                  src="/PROFIL.jpeg"
+                  alt="Profile Photo"
+                  fill
+                  className="object-cover object-center"
+                  priority
+                />
               </div>
             </motion.div>
           </div>
