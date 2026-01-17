@@ -14,7 +14,7 @@ export default function Home() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-2xl font-bold tracking-wider">PORTFOLIO</h1>
+          <h1 className="text-2xl font-bold tracking-wider">Edward Benedict</h1>
         </motion.div>
         <motion.button
           initial={{ opacity: 0, x: 20 }}
@@ -41,13 +41,13 @@ export default function Home() {
               <div className="space-y-6">
                 <p className="text-sm text-zinc-400 tracking-widest uppercase">About Me</p>
                 <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                  I Create Digital<br />Future.
+                  I Build Meaningful Digital Experiences.<br />Future.
                 </h2>
               </div>
 
               <div className="space-y-4 text-zinc-400 text-base leading-relaxed max-w-lg">
                 <p>
-                  Passion saya adalah menciptakan produk digital yang berdampak dan mudah digunakan. Saya selalu berusaha menggabungkan kreativitas, teknologi, dan user experience dalam setiap project yang saya kerjakan.
+                  Saya merancang dan mengembangkan produk digital yang fokus pada kegunaan, estetika, dan pengalaman pengguna. Menggabungkan teknologi dan kreativitas untuk menghadirkan solusi yang nyata, bukan sekadar tampilan.
                 </p>
                 <p>
                    Saya selalu berusaha menggabungkan kreativitas, teknologi, dan user experience dalam setiap project yang saya kerjakan.
@@ -60,12 +60,14 @@ export default function Home() {
                 transition={{ delay: 0.6 }}
                 className="pt-4"
               >
-                <a 
-                  href="mailto:hi@domain.com" 
-                  className="text-white hover:text-zinc-300 transition-colors inline-flex items-center gap-2"
+                <a
+                  href="https://mail.google.com/mail/?view=cm&to=edwardbene07@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-blue-400 underline transition-colors inline-flex items-center gap-2"
                 >
                   <span className="w-2 h-2 bg-white rounded-full"></span>
-                  hi@domain.com
+                  edwardbene07@gmail.com
                 </a>
               </motion.div>
             </motion.div>
@@ -100,58 +102,84 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-12"
+            className="space-y-16"
           >
             {/* Section Header */}
             <div className="space-y-4">
-              <p className="text-sm text-zinc-400 tracking-widest uppercase">Experience & Education</p>
-              <h2 className="text-4xl md:text-5xl font-bold">My Resume</h2>
+              <p className="text-sm text-zinc-400 tracking-widest uppercase flex items-center gap-2">
+                <Star className="w-4 h-4" />
+                TIMELINE
+              </p>
+              <h2 className="text-4xl md:text-5xl font-bold">Our journey</h2>
             </div>
 
-            {/* Two Column Layout */}
-            <div className="grid lg:grid-cols-2 gap-16">
-              {/* Experience Column */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="space-y-8"
-              >
-                <h3 className="text-2xl font-semibold mb-8">Experience</h3>
-                <div className="space-y-8">
-                  {experienceData.map((item, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.1 * index }}
-                      className="group"
-                    >
-                      <div className="flex justify-between items-start mb-2">
-                        <h4 className="text-lg font-semibold text-white group-hover:text-zinc-300 transition-colors">
-                          {item.company}
-                        </h4>
-                        <span className="text-sm text-zinc-500">{item.period}</span>
-                      </div>
-                      <p className="text-zinc-400 text-sm">{item.position}</p>
-                      <div className="h-px bg-zinc-800 mt-6"></div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+            {/* Timeline Experience */}
+            <div className="max-w-4xl">
+              <div className="space-y-12 relative">
+                {/* Vertical Line */}
+                <div className="absolute left-[15px] top-8 bottom-0 w-[2px] bg-zinc-800"></div>
+                
+                {experienceData.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.1 * index }}
+                    className="relative pl-16"
+                  >
+                    {/* Timeline Dot */}
+                    <div className="absolute left-0 top-0 w-8 h-8 bg-white rounded-full border-4 border-[#0a0a0a] flex items-center justify-center z-10">
+                      {index === 1 && (
+                        <div className="absolute inset-0 rounded-full border-2 border-zinc-600"></div>
+                      )}
+                    </div>
 
-              {/* Education Column */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="space-y-8"
-              >
-                <h3 className="text-2xl font-semibold mb-8">Education</h3>
-                <div className="space-y-8">
+                    {/* Content */}
+                    <div className="space-y-3">
+                      <h3 className="text-2xl md:text-3xl font-bold text-white">
+                        {item.company}
+                      </h3>
+                      <p className="text-zinc-400 leading-relaxed max-w-2xl">
+                        {item.description}
+                      </p>
+                      
+                      {/* Image for specific items */}
+                      {item.image && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.6, delay: 0.2 }}
+                          className="mt-6 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-400 to-blue-600 h-64 relative"
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-br from-yellow-200/30 via-blue-400/50 to-blue-600"></div>
+                          <div className="absolute inset-0 flex items-center justify-center opacity-20">
+                            <div className="text-6xl font-bold text-white">CONCEPT</div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Education Section - Below Timeline */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="pt-12"
+            >
+              <div className="space-y-8">
+                <div className="space-y-4">
+                  <p className="text-sm text-zinc-400 tracking-widest uppercase">Education</p>
+                  <h3 className="text-3xl md:text-4xl font-bold">Academic Background</h3>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-8 mt-8">
                   {educationData.map((item, index) => (
                     <motion.div
                       key={index}
@@ -159,21 +187,20 @@ export default function Home() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 0.1 * index }}
-                      className="group"
+                      className="group bg-zinc-900/50 rounded-xl p-6 border border-zinc-800 hover:border-zinc-700 transition-all"
                     >
-                      <div className="flex justify-between items-start mb-2">
-                        <h4 className="text-lg font-semibold text-white group-hover:text-zinc-300 transition-colors">
+                      <div className="space-y-3">
+                        <div className="text-sm text-zinc-500">{item.period}</div>
+                        <h4 className="text-xl font-semibold text-white group-hover:text-zinc-300 transition-colors">
                           {item.institution}
                         </h4>
-                        <span className="text-sm text-zinc-500">{item.period}</span>
+                        <p className="text-zinc-400 text-sm">{item.program}</p>
                       </div>
-                      <p className="text-zinc-400 text-sm">{item.program}</p>
-                      <div className="h-px bg-zinc-800 mt-6"></div>
                     </motion.div>
                   ))}
                 </div>
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -403,19 +430,19 @@ export default function Home() {
 
 const experienceData = [
   {
-    company: 'H&M Space Inc.',
-    position: 'UI/UX Designer',
-    period: '2020 - Present'
+    company: 'All started here',
+    description: 'Everything starts with an idea. A spark that we just could not stop thinking about building.',
+    image: false
   },
   {
-    company: 'Robinhood Inc.',
-    position: 'Web Developer',
-    period: '2018 - 2020'
+    company: 'First concept',
+    description: 'Turning ideas into visual reality. Our first mockups brought the vision to life.',
+    image: true
   },
   {
-    company: 'Rosan Software Inc.',
-    position: 'Senior Developer',
-    period: '2015 - 2018'
+    company: 'When things got serious',
+    description: 'Went from just an idea to actually building something real. The journey from concept to execution.',
+    image: false
   }
 ];
 
