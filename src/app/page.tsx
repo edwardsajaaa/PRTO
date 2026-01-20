@@ -231,14 +231,13 @@ export default function Home() {
                 className="space-y-4 text-zinc-400 text-base leading-relaxed"
               >
                 <p>
-                  Pellentesque magna magna semper dignibus felis nisl orci etiam.
-                  Nulla. Pellentesque habitant morbi tristique senectus et netus
-                  malesuada fames ac turpis egestas.
+                  Saya memiliki keahlian utama di bidang game development, web development, dan mobile development. Berpengalaman membangun aplikasi interaktif, game 2D/3D, serta website dan aplikasi mobile modern dengan teknologi terkini.
                 </p>
-                <p>
-                  Nullam ac dui eget turpis pulvinar porta et at libero. Morbi
-                  hendrerit justo ac tortor pellentesque dictum.
-                </p>
+                <ul className="list-disc ml-5 space-y-1">
+                  <li><b>Game Development:</b> Unity (C#), animasi, scripting, deployment multi-platform, serta AR/XR.</li>
+                  <li><b>Web Development:</b> Next.js, React, backend API, database modern, dan UI/UX responsif.</li>
+                  <li><b>Mobile Development:</b> Flutter, React Native, integrasi API, dan publikasi ke Play Store/App Store.</li>
+                </ul>
               </motion.div>
 
               {/* Right Column - Skills */}
@@ -448,26 +447,26 @@ const experienceData = [
 
 const educationData = [
   {
-    institution: 'Stanford University',
-    program: 'of California',
-    period: '2013 - 2016'
+    institution: 'Manado Junior High School 2',
+    program: 'IPA',
+    period: '2017 - 2019'
   },
   {
-    institution: 'Specialization Course',
-    program: 'MIT University',
-    period: '2011 - 2013'
+    institution: 'Senior High School 2 Manado',
+    program: 'MIPA',
+    period: '2020 - 2023'
   },
   {
-    institution: 'Local High School',
-    program: 'San Francisco',
-    period: '2009 - 2011'
+    institution: 'SAM RATULANGI UNIVERSITY',
+    program: 'Informatics',
+    period: '2023 - Present'
   }
 ];
 
 const skillsData = [
-  { name: 'Design', percentage: 90 },
-  { name: 'Branding', percentage: 80 },
-  { name: 'Web Design', percentage: 95 },
-  { name: 'Social Media', percentage: 85 }
+  { name: 'Unity (C#)', percentage: 90 },
+  { name: 'Python', percentage: 80 },
+  { name: 'MongoDB, PostgreSQL, MySQL, Firebase, Supabase', percentage: 90 },
+  { name: 'Unity XR, ARCore, ARKit, WebXR', percentage: 85 }
 ];
 
