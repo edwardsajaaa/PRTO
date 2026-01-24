@@ -298,8 +298,8 @@ export default function Home() {
               className="space-y-6"
             >
               <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-                Need help with professional<br />
-                support? Let's work together!
+                Butuh bantuan dengan dukungan profesional?<br />
+                Ayo bekerja sama!
               </h2>
               <div className="space-y-3">
                 <a 
@@ -307,9 +307,9 @@ export default function Home() {
                   className="flex items-center gap-2 text-zinc-300 hover:text-white transition-colors"
                 >
                   <span className="w-2 h-2 bg-white rounded-full"></span>
-                  info@domain.com
+                  edwardbene07@gmail.com
                 </a>
-                <p className="text-2xl font-semibold">www.DownloadNewThemes.com</p>
+                {/* <p className="text-2xl font-semibold">www.DownloadNewThemes.com</p> */}
               </div>
             </motion.div>
 
