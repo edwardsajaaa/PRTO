@@ -82,7 +82,7 @@ export default function Home() {
               <div className="relative w-full h-full bg-zinc-800 rounded-lg overflow-hidden">
                 {/* Profile photo */}
                 <Image
-                  src="/PROFIL.jpeg"
+                  src="/Profil_baru.jpeg"
                   alt="Profile Photo"
                   fill
                   className="object-cover object-center"
@@ -303,7 +303,7 @@ export default function Home() {
               </h2>
               <div className="space-y-3">
                 <a 
-                  href="mailto:info@domain.com" 
+                  href="mailto:edwardbene07@gmail.com" 
                   className="flex items-center gap-2 text-zinc-300 hover:text-white transition-colors"
                 >
                   <span className="w-2 h-2 bg-white rounded-full"></span>
