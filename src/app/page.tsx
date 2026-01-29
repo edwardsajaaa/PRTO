@@ -8,19 +8,21 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-8 py-6 flex justify-between items-center">
+      <nav className="fixed top-0 left-0 right-0 z-50 px-8 py-6 flex justify-between items-center backdrop-blur-md bg-[#0a0a0a]/80">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-2xl font-bold tracking-wider">Edward Benedict</h1>
+          <h1 className="text-2xl font-bold tracking-wider bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent">Edward Benedict</h1>
         </motion.div>
         <motion.button
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="p-2 hover:bg-white/10 rounded-lg transition-colors"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="p-2 hover:bg-white/10 rounded-lg transition-all duration-300"
           aria-label="Menu"
         >
           <Menu className="w-6 h-6" />
@@ -39,9 +41,17 @@ export default function Home() {
               className="space-y-8"
             >
               <div className="space-y-6">
-                <p className="text-sm text-zinc-400 tracking-widest uppercase">About Me</p>
+                <motion.p 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                  className="text-sm text-zinc-400 tracking-widest uppercase flex items-center gap-2"
+                >
+                  <span className="w-8 h-[2px] bg-gradient-to-r from-blue-400 to-transparent"></span>
+                  About Me
+                </motion.p>
                 <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                  I Build Meaningful Digital Experiences.<br />Future.
+                  I Build <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Meaningful</span><br />Digital Experiences.<br />Future.
                 </h2>
               </div>
 
@@ -77,17 +87,25 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="relative lg:h-[600px] h-[500px]"
+              className="relative lg:h-150 h-125"
             >
-              <div className="relative w-full h-full bg-zinc-800 rounded-lg overflow-hidden">
-                {/* Profile photo */}
-                <Image
-                  src="/Profil_baru.jpeg"
-                  alt="Profile Photo"
-                  fill
-                  className="object-cover object-center"
-                  priority
-                />
+              <div className="relative w-full h-full flex items-center justify-center">
+                {/* Neon effect behind border - no overflow to show shadow */}
+                <div className="absolute inset-0 flex items-center justify-center z-0">
+                  <div className="neon-behind rounded-[18px] w-[98%] h-[98%]"></div>
+                </div>
+                {/* Profile photo with white border */}
+                <div className="relative z-10 w-[98%] h-[98%] flex items-center justify-center">
+                  <div className="rounded-[18px] border-4 border-white overflow-hidden w-full h-full shadow-2xl">
+                    <Image
+                      src="/Profil_baru.jpeg"
+                      alt="Profile Photo"
+                      fill
+                      className="object-cover object-center hover:scale-105 transition-transform duration-700"
+                      priority
+                    />
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -150,9 +168,9 @@ export default function Home() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="mt-6 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-400 to-blue-600 h-40 relative"
+                            className="mt-6 rounded-2xl overflow-hidden bg-linear-to-br from-blue-400 to-blue-600 h-40 relative"
                           >
-                            <div className="absolute inset-0 bg-gradient-to-br from-yellow-200/30 via-blue-400/50 to-blue-600"></div>
+                            <div className="absolute inset-0 bg-linear-to-br from-yellow-200/30 via-blue-400/50 to-blue-600"></div>
                             <div className="absolute inset-0 flex items-center justify-center opacity-20">
                               <div className="text-4xl font-bold text-white">CONCEPT</div>
                             </div>
@@ -348,7 +366,7 @@ export default function Home() {
                   className="relative flex items-center gap-3 p-5 bg-zinc-900/50 backdrop-blur-sm rounded-lg overflow-hidden group"
                 >
                   {/* Glowing border effect */}
-                  <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#0077B5] to-[#00A0DC] opacity-0 group-hover:opacity-100 transition-opacity duration-300" 
+                  <div className="absolute inset-0 rounded-lg bg-linear-to-r from-[#0077B5] to-[#00A0DC] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                        style={{ padding: '2px' }}>
                     <div className="w-full h-full bg-zinc-900 rounded-lg"></div>
                   </div>
@@ -482,17 +500,23 @@ const experienceData = [
   {
     company: 'All started here',
     description: 'Everything starts with an idea. A spark that we just could not stop thinking about building.',
-    image: false
+    image: false,
+    year: '2019',
+    video: ''
   },
   {
     company: 'First concept',
     description: 'Turning ideas into visual reality. Our first mockups brought the vision to life.',
-    image: true
+    image: true,
+    year: '2020',
+    video: ''
   },
   {
     company: 'When things got serious',
     description: 'Went from just an idea to actually building something real. The journey from concept to execution.',
-    image: false
+    image: false,
+    year: '2022',
+    video: ''
   }
 ];
 
