@@ -95,7 +95,7 @@ export default function Home() {
                       src="/Profil_baru.jpeg"
                       alt="Profile Photo"
                       fill
-                      className="object-cover object-center hover:scale-105 transition-transform duration-700"
+                      className="object-cover object-center transition-transform duration-700"
                       priority
                     />
                   </div>
