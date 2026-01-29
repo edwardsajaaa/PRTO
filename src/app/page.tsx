@@ -14,7 +14,7 @@ export default function Home() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-2xl font-bold tracking-wider bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent">Edward Benedict</h1>
+          <h1 className="text-2xl font-bold tracking-wider bg-linear-to-r from-white to-zinc-400 bg-clip-text text-transparent">Edward Benedict</h1>
         </motion.div>
         <motion.button
           initial={{ opacity: 0, x: 20 }}
@@ -47,22 +47,16 @@ export default function Home() {
                   transition={{ delay: 0.3 }}
                   className="text-sm text-zinc-400 tracking-widest uppercase flex items-center gap-2"
                 >
-                  <span className="w-8 h-[2px] bg-gradient-to-r from-blue-400 to-transparent"></span>
+                  <span className="w-8 h-0.5 bg-linear-to-r from-blue-400 to-transparent"></span>
                   About Me
                 </motion.p>
                 <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                  I Build <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Meaningful</span><br />Digital Experiences.<br />Future.
+                  I Build <span className="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Meaningful</span><br />Digital Experiences.<br />Future.
                 </h2>
               </div>
-
-              <div className="space-y-4 text-zinc-400 text-base leading-relaxed max-w-lg">
-                <p>
-                  Saya merancang dan mengembangkan produk digital yang fokus pada kegunaan, estetika, dan pengalaman pengguna. Menggabungkan teknologi dan kreativitas untuk menghadirkan solusi yang nyata, bukan sekadar tampilan.
-                </p>
-                <p>
-                   Saya selalu berusaha menggabungkan kreativitas, teknologi, dan user experience dalam setiap project yang saya kerjakan.
-                </p>
-              </div>
+              <p>
+                Saya selalu berusaha menggabungkan kreativitas, teknologi, dan user experience dalam setiap project yang saya kerjakan.
+              </p>
 
               <motion.div
                 initial={{ opacity: 0 }}
