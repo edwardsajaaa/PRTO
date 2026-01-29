@@ -1,3 +1,109 @@
+/* Neon effect for text on dark theme */
+.neon-text {
+  color: #111;
+  text-shadow:
+    0 0 2px #fff,
+    0 0 4px #fff,
+    0 0 8px #fff;
+  font-weight: bold;
+  animation: neonTextFlicker 25s infinite steps(1, end);
+}
+
+@keyframes neonTextFlicker {
+  0% {
+    color: #111;
+    text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 8px #fff;
+    opacity: 1;
+  }
+  45% {
+    color: #111;
+    text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 8px #fff;
+    opacity: 1;
+  }
+  45.5% {
+    color: transparent;
+    text-shadow: none;
+    opacity: 0;
+  }
+  46% {
+    color: #111;
+    text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 8px #fff;
+    opacity: 1;
+  }
+  /* Double flicker, rare */
+  60% {
+    color: #111;
+    text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 8px #fff;
+    opacity: 1;
+  }
+  60.5% {
+    color: transparent;
+    text-shadow: none;
+    opacity: 0;
+  }
+  61% {
+    color: #111;
+    text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 8px #fff;
+    opacity: 1;
+  }
+  61.5% {
+    color: transparent;
+    text-shadow: none;
+    opacity: 0;
+  }
+  62% {
+    color: #111;
+    text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 8px #fff;
+    opacity: 1;
+  }
+  95% {
+    color: #111;
+    text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 8px #fff;
+    opacity: 1;
+  }
+  95.5% {
+    color: transparent;
+    text-shadow: none;
+    opacity: 0;
+  }
+  96% {
+    color: #111;
+    text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 8px #fff;
+    opacity: 1;
+  }
+  100% {
+    color: #111;
+    text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 8px #fff;
+    opacity: 1;
+}
+}
 
 /* Neon border behind photo, glowing outward */
 

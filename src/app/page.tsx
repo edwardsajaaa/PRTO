@@ -51,7 +51,7 @@ export default function Home() {
                   About Me
                 </motion.p>
                 <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                  I Build <span className="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Meaningful</span><br />Digital Experiences.<br />Future.
+                  I Build <span className="neon-text">Meaningful</span><br />Digital Experiences.<br />Future.
                 </h2>
               </div>
               <p>
@@ -84,10 +84,7 @@ export default function Home() {
               className="relative lg:h-150 h-125"
             >
               <div className="relative w-full h-full flex items-center justify-center">
-                {/* Neon effect behind border - no overflow to show shadow */}
-                <div className="absolute inset-0 flex items-center justify-center z-0">
-                  <div className="neon-behind rounded-[18px] w-[98%] h-[98%]"></div>
-                </div>
+                {/* Neon effect moved to text */}
                 {/* Profile photo with white border */}
                 <div className="relative z-10 w-[98%] h-[98%] flex items-center justify-center">
                   <div className="rounded-[18px] border-4 border-white overflow-hidden w-full h-full shadow-2xl">
