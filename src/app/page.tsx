@@ -113,60 +113,55 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-bold">Our journey</h2>
             </div>
 
-            {/* Timeline Experience Zig-Zag */}
-            <div className="relative max-w-5xl mx-auto">
-              {/* Vertical Line Center */}
-              <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-zinc-800 -translate-x-1/2 z-0"></div>
-              <div className="flex flex-col gap-16">
-                {experienceData.map((item, index) => {
-                  const isLeft = index % 2 !== 0;
-                  return (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.7, delay: 0.1 * index }}
-                      className={`relative flex ${isLeft ? 'justify-start' : 'justify-end'} items-center w-full`}
-                      style={{ zIndex: 1 }}
-                    >
-                      {/* Card */}
-                      <div className={`w-full max-w-md bg-zinc-900/80 rounded-2xl shadow-lg p-8 border border-zinc-800 ${isLeft ? 'ml-0 mr-auto' : 'mr-0 ml-auto'} relative`}
-                        style={{ minHeight: '180px' }}
-                      >
-                        <div className="mb-2 text-xs font-bold text-blue-400 uppercase tracking-widest">{item.year || ''}</div>
-                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">{item.company}</h3>
-                        <p className="text-zinc-400 leading-relaxed mb-4">{item.description}</p>
-                        {/* Slot video jika ada */}
-                        {item.video && (
-                          <div className="mt-4 rounded-lg overflow-hidden aspect-video bg-zinc-800 border border-zinc-700">
-                            <video src={item.video} controls className="w-full h-full object-cover" />
-                          </div>
-                        )}
-                        {/* Slot image jika ada */}
-                        {item.image && !item.video && (
-                          <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className="mt-6 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-400 to-blue-600 h-40 relative"
-                          >
-                            <div className="absolute inset-0 bg-gradient-to-br from-yellow-200/30 via-blue-400/50 to-blue-600"></div>
-                            <div className="absolute inset-0 flex items-center justify-center opacity-20">
-                              <div className="text-4xl font-bold text-white">CONCEPT</div>
-                            </div>
-                          </motion.div>
-                        )}
+            {/* Timeline Experience */}
+            <div className="max-w-4xl">
+              <div className="space-y-12 relative">
+                {/* Vertical Line */}
+                <div className="absolute left-[15px] top-8 bottom-0 w-[2px] bg-zinc-800"></div>
+                
+                {experienceData.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.1 * index }}
+                    className="relative pl-16"
+                  >
+                    {/* Timeline Dot */}
+                    <div className="absolute left-0 top-0 w-8 h-8 bg-white rounded-full border-4 border-[#0a0a0a] flex items-center justify-center z-10">
+                      {index === 1 && (
+                        <div className="absolute inset-0 rounded-full border-2 border-zinc-600"></div>
+                      )}
+                    </div>
 
-                      </div>
-                      {/* Timeline Dot */}
-                      <div className="absolute left-1/2 -translate-x-1/2 w-8 h-8 bg-white rounded-full border-4 border-[#0a0a0a] flex items-center justify-center z-10">
-                        <div className="w-4 h-4 bg-blue-400 rounded-full"></div>
-                      </div>
-                    </motion.div>
-                  );
-                })}
+                    {/* Content */}
+                    <div className="space-y-3">
+                      <h3 className="text-2xl md:text-3xl font-bold text-white">
+                        {item.company}
+                      </h3>
+                      <p className="text-zinc-400 leading-relaxed max-w-2xl">
+                        {item.description}
+                      </p>
+                      
+                      {/* Image for specific items */}
+                      {item.image && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.6, delay: 0.2 }}
+                          className="mt-6 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-400 to-blue-600 h-64 relative"
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-br from-yellow-200/30 via-blue-400/50 to-blue-600"></div>
+                          <div className="absolute inset-0 flex items-center justify-center opacity-20">
+                            <div className="text-6xl font-bold text-white">CONCEPT</div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </div>
 
