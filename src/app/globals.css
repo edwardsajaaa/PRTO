@@ -13,54 +13,45 @@
     0 0 24px 4px rgba(255, 255, 255, 0.4),
     0 0 36px 8px rgba(255, 255, 255, 0.2);
   filter: blur(1.5px);
-  animation: neonBehindFlicker 5s infinite steps(1, end);
+  animation: neonBehindFlicker 10s infinite linear;
 }
 
 @keyframes neonBehindFlicker {
   0% {
     opacity: 1;
   }
-  /* Unstable intensity: normal, dim, very dim, normal, quick flicker */
-  8% {
-    opacity: 0.7;
+  7% {
+    opacity: 0.85;
   }
-  12% {
-    opacity: 0.4;
-  }
-  16% {
-    opacity: 1;
-  }
-  20% {
+  13% {
     opacity: 0.6;
   }
-  24% {
-    opacity: 1;
+  18% {
+    opacity: 0.95;
+  }
+  23% {
+    opacity: 0.7;
   }
   28% {
-    opacity: 0.3;
-  }
-  32% {
     opacity: 1;
   }
-  /* Double quick flicker (off-on-off-on) */
-  40% {
-    opacity: 0;
-  }
-  42% {
-    opacity: 1;
-  }
-  44% {
-    opacity: 0;
-  }
-  46% {
-    opacity: 1;
-  }
-  /* More unstable intensity */
-  60% {
+  35% {
     opacity: 0.5;
   }
-  65% {
+  40% {
+    opacity: 0.9;
+  }
+  45% {
+    opacity: 0.6;
+  }
+  50% {
     opacity: 1;
+  }
+  60% {
+    opacity: 0.7;
+  }
+  65% {
+    opacity: 0.95;
   }
   70% {
     opacity: 0.6;
@@ -68,20 +59,15 @@
   75% {
     opacity: 1;
   }
-  /* Double quick flicker (off-on-off-on) */
-  82% {
-    opacity: 0;
+  80% {
+    opacity: 0.8;
   }
-  84% {
+  85% {
+    opacity: 0.5;
+  }
+  90% {
     opacity: 1;
   }
-  86% {
-    opacity: 0;
-  }
-  88% {
-    opacity: 1;
-  }
-  /* Back to normal */
   100% {
     opacity: 1;
   }
