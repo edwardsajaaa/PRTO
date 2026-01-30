@@ -1,3 +1,41 @@
+/* Glowing text effect for 'meaningful' */
+.glow-text {
+  color: #fff;
+  text-shadow:
+    0 0 10px #00eaff,
+    0 0 20px #00eaff,
+    0 0 40px #00eaff,
+    0 0 80px #00eaff,
+    0 0 10px #00fff7,
+    0 0 20px #00fff7,
+    0 0 40px #00fff7;
+  font-weight: bold;
+  animation: glow-pulse 1.5s infinite alternate;
+}
+
+@keyframes glow-pulse {
+  0% {
+    text-shadow:
+      0 0 10px #00eaff,
+      0 0 20px #00eaff,
+      0 0 40px #00eaff,
+      0 0 80px #00eaff,
+      0 0 10px #00fff7,
+      0 0 20px #00fff7,
+      0 0 40px #00fff7;
+  }
+  100% {
+    text-shadow:
+      0 0 20px #00eaff,
+      0 0 40px #00eaff,
+      0 0 80px #00eaff,
+      0 0 120px #00eaff,
+      0 0 20px #00fff7,
+      0 0 40px #00fff7,
+      0 0 80px #00fff7;
+  }
+}
+
 /* Neon effect for text on dark theme */
 .neon-text {
   color: #111;

@@ -41,7 +41,7 @@ export default function Home() {
               <div className="space-y-6">
                 <p className="text-sm text-zinc-400 tracking-widest uppercase">About Me</p>
                 <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                  I Build Meaningful Digital Experiences.<br />Future.
+                  I Build <span className="glow-text">Meaningful</span> Digital Experiences.<br />Future.
                 </h2>
               </div>
 
