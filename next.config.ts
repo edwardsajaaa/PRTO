@@ -4,6 +4,8 @@ import createMDX from '@next/mdx';
 const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
+  compress: true,
+  poweredByHeader: false,
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
 };
 
