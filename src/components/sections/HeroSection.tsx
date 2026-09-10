@@ -1,7 +1,8 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ChevronDown, FileDown } from 'lucide-react';
+import { ChevronDown, FileText } from 'lucide-react';
 import { ProfileCard3D } from './ProfileCard3D';
 
 export function HeroSection() {
@@ -48,16 +49,13 @@ export function HeroSection() {
                 edwardbene07@gmail.com
               </a>
 
-              <a
-                href="/CV_Edward_Benedict.pdf"
-                download="CV_Edward_Benedict.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/resume"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium text-xs shadow-lg shadow-blue-500/20 transition-all hover:scale-105 active:scale-95"
               >
-                <FileDown className="w-3.5 h-3.5" />
-                Download CV
-              </a>
+                <FileText className="w-3.5 h-3.5" />
+                View Full CV / Resume
+              </Link>
             </motion.div>
           </motion.div>
 

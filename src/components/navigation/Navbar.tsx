@@ -1,14 +1,16 @@
 'use client';
 
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, FileDown, Sparkles } from 'lucide-react';
+import { Menu, X, FileText, Sparkles } from 'lucide-react';
 
 const navLinks = [
   { name: 'About', href: '#about' },
   { name: 'Experience', href: '#experience' },
   { name: 'Skills', href: '#skills' },
   { name: 'Contact', href: '#contact' },
+  { name: 'Resume', href: '/resume', isRoute: true },
 ];
 
 export function Navbar() {
@@ -41,7 +43,12 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isRoute?: boolean) => {
+    if (isRoute) {
+      setIsOpen(false);
+      return;
+    }
+
     e.preventDefault();
     setIsOpen(false);
 
@@ -79,7 +86,7 @@ export function Navbar() {
           transition={{ duration: 0.5 }}
         >
           <a
-            href="#about"
+            href="/#about"
             onClick={(e) => handleScrollTo(e, '#about')}
             className="text-xl md:text-2xl font-bold tracking-wider hover:text-blue-400 transition-colors flex items-center gap-2 group"
           >
@@ -88,16 +95,30 @@ export function Navbar() {
           </a>
         </motion.div>
 
-        {/* Desktop Navigation Links & Download CV */}
+        {/* Desktop Navigation Links & View CV */}
         <div className="hidden md:flex items-center gap-8">
           <nav className="flex items-center gap-6">
             {navLinks.map((link) => {
-              const isActive = activeSection === link.href.replace('#', '');
+              const isActive = !link.isRoute && activeSection === link.href.replace('#', '');
+              if (link.isRoute) {
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="text-sm font-medium text-zinc-400 hover:text-blue-400 transition-colors py-1 flex items-center gap-1.5"
+                  >
+                    <span>{link.name}</span>
+                    <span className="text-[10px] px-1.5 py-0.2 rounded bg-blue-500/20 text-blue-400 font-semibold border border-blue-500/30">
+                      Page
+                    </span>
+                  </Link>
+                );
+              }
               return (
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={(e) => handleScrollTo(e, link.href)}
+                  onClick={(e) => handleScrollTo(e, link.href, link.isRoute)}
                   className={`text-sm font-medium transition-all relative py-1 ${
                     isActive
                       ? 'text-white'
@@ -118,17 +139,14 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-3 pl-4 border-l border-zinc-800">
-            {/* Download CV Button */}
-            <a
-              href="/CV_Edward_Benedict.pdf"
-              download="CV_Edward_Benedict.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* View / Download CV Button */}
+            <Link
+              href="/resume"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-blue-600/20 text-white border border-white/15 hover:border-blue-400/50 hover:text-blue-400 transition-all hover:shadow-[0_0_16px_rgba(59,130,246,0.25)] active:scale-95"
             >
-              <FileDown className="w-3.5 h-3.5 text-blue-400" />
-              <span>Download CV</span>
-            </a>
+              <FileText className="w-3.5 h-3.5 text-blue-400" />
+              <span>View CV</span>
+            </Link>
 
             {/* Get in touch CTA */}
             <a
@@ -167,12 +185,30 @@ export function Navbar() {
           >
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => {
+                if (link.isRoute) {
+                  return (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className="flex items-center justify-between py-2.5 px-4 rounded-xl text-sm font-medium text-zinc-300 hover:bg-white/5 hover:text-white transition-all"
+                    >
+                      <span className="flex items-center gap-2">
+                        <FileText className="w-4 h-4 text-blue-400" />
+                        {link.name} (CV)
+                      </span>
+                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                        New Page
+                      </span>
+                    </Link>
+                  );
+                }
                 const isActive = activeSection === link.href.replace('#', '');
                 return (
                   <a
                     key={link.name}
                     href={link.href}
-                    onClick={(e) => handleScrollTo(e, link.href)}
+                    onClick={(e) => handleScrollTo(e, link.href, link.isRoute)}
                     className={`flex items-center justify-between py-2.5 px-4 rounded-xl text-sm font-medium transition-all ${
                       isActive
                         ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20 font-semibold'
@@ -187,18 +223,15 @@ export function Navbar() {
             </div>
 
             <div className="pt-2 border-t border-zinc-800/80 flex flex-col gap-3">
-              {/* Mobile Download CV Button */}
-              <a
-                href="/CV_Edward_Benedict.pdf"
-                download="CV_Edward_Benedict.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              {/* Mobile View CV Button */}
+              <Link
+                href="/resume"
                 onClick={() => setIsOpen(false)}
                 className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-zinc-900 border border-zinc-700/80 hover:border-blue-400 text-white text-xs font-semibold shadow-lg transition-all"
               >
-                <FileDown className="w-4 h-4 text-blue-400" />
-                <span>Download CV (PDF)</span>
-              </a>
+                <FileText className="w-4 h-4 text-blue-400" />
+                <span>View & Download Curriculum Vitae</span>
+              </Link>
 
               {/* Mobile Email CTA */}
               <a
