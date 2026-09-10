@@ -109,8 +109,10 @@ Pastikan [Node.js](https://nodejs.org/) sudah terinstal di komputer Anda.
 ## 📬 Kontak & Kolaborasi
 
 - **Email**: [edwardbene07@gmail.com](mailto:edwardbene07@gmail.com)
-- **LinkedIn**: [Edward Benedict](https://linkedin.com/in/your-profile)
+- **LinkedIn**: [Edward Benedict](https://www.linkedin.com/in/edwardbenedict)
 - **GitHub**: [@edwardsajaaa](https://github.com/edwardsajaaa)
+- **Instagram**: [@edwardsajaaa](https://instagram.com/edwardsajaaa)
+- **WhatsApp**: [+62 895 2917 5850](https://wa.me/6289529175850)
 
 ---
 

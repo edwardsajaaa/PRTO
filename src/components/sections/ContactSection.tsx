@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Linkedin, Instagram, Twitter, Award, Trophy, Target, Star } from 'lucide-react';
+import { Linkedin, Instagram, Phone, Award, Trophy, Target, Star } from 'lucide-react';
 
 export function ContactSection() {
   return (
@@ -59,7 +59,7 @@ export function ContactSection() {
             <div className="grid grid-cols-2 gap-4">
               {/* LinkedIn */}
               <motion.a
-                href="https://linkedin.com/in/your-profile"
+                href="https://www.linkedin.com/in/edwardbenedict"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
@@ -83,14 +83,14 @@ export function ContactSection() {
                   <Linkedin className="w-6 h-6 text-[#0077B5] group-hover:text-white transition-colors" />
                   <div className="text-white">
                     <p className="font-semibold text-sm">LinkedIn</p>
-                    <p className="text-xs text-zinc-400">Professional</p>
+                    <p className="text-xs text-zinc-400">@edwardbenedict</p>
                   </div>
                 </div>
               </motion.a>
 
               {/* GitHub */}
               <motion.a
-                href="https://github.com/your-username"
+                href="https://github.com/edwardsajaaa"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
@@ -109,14 +109,14 @@ export function ContactSection() {
                   </svg>
                   <div className="text-white">
                     <p className="font-semibold text-sm">GitHub</p>
-                    <p className="text-xs text-zinc-400">Projects</p>
+                    <p className="text-xs text-zinc-400">@edwardsajaaa</p>
                   </div>
                 </div>
               </motion.a>
 
               {/* Instagram */}
               <motion.a
-                href="https://instagram.com/your-username"
+                href="https://instagram.com/edwardsajaaa"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
@@ -139,32 +139,31 @@ export function ContactSection() {
                   <Instagram className="w-6 h-6 text-[#FD1D1D] group-hover:text-white transition-colors" />
                   <div className="text-white">
                     <p className="font-semibold text-sm">Instagram</p>
-                    <p className="text-xs text-zinc-400">Personal</p>
+                    <p className="text-xs text-zinc-400">@edwardsajaaa</p>
                   </div>
                 </div>
               </motion.a>
 
-              {/* Twitter/X */}
+              {/* WhatsApp */}
               <motion.a
-                href="https://twitter.com/your-username"
+                href="https://wa.me/6289529175850"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{
                   scale: 0.98,
                   x: [0, -2, 2, -2, 2, 0],
-                  rotate: [0, -1, 1, -1, 1, 0],
                   transition: { duration: 0.3 }
                 }}
                 className="relative flex items-center gap-3 p-5 bg-zinc-900/50 backdrop-blur-sm rounded-lg overflow-hidden group"
               >
-                <div className="absolute inset-0 rounded-lg border-2 border-blue-500/50 group-hover:border-blue-400 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-300"></div>
+                <div className="absolute inset-0 rounded-lg border-2 border-emerald-500/50 group-hover:border-emerald-400 group-hover:shadow-[0_0_20px_rgba(16,185,129,0.5)] transition-all duration-300"></div>
 
                 <div className="relative z-10 flex items-center gap-3">
-                  <Twitter className="w-6 h-6 text-blue-500 group-hover:text-white transition-colors" />
+                  <Phone className="w-6 h-6 text-emerald-400 group-hover:text-white transition-colors" />
                   <div className="text-white">
-                    <p className="font-semibold text-sm">Twitter</p>
-                    <p className="text-xs text-zinc-400">Updates</p>
+                    <p className="font-semibold text-sm">WhatsApp</p>
+                    <p className="text-xs text-zinc-400">+62 895 2917 5850</p>
                   </div>
                 </div>
               </motion.a>

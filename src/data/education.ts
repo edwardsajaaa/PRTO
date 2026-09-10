@@ -9,19 +9,13 @@ export const educationData: EducationItem[] = [
   {
     institution: 'Sam Ratulangi University',
     program: 'Bachelor of Informatics Engineering',
-    period: '2023 - Present',
-    detail: 'Faculty of Engineering · Focus on Software Engineering, Database Systems & Interactive Technology'
+    period: '2024 - Present',
+    detail: 'GPA 3.90 / 4.00 · Focus on Software Engineering, Database Systems, Algorithm & Interactive Technology'
   },
   {
-    institution: 'Senior High School 2 Manado',
-    program: 'Natural Sciences (MIPA)',
+    institution: 'SMA Negeri 1 Manado',
+    program: 'Mathematics and Natural Sciences (MIPA)',
     period: '2020 - 2023',
-    detail: 'High School Diploma · Mathematics and Natural Science Track (SMA Negeri 2 Manado)'
-  },
-  {
-    institution: 'Junior High School 2 Manado',
-    program: 'General Education',
-    period: '2017 - 2019',
-    detail: 'Junior High School Diploma · Basic Sciences & General Studies (SMP Negeri 2 Manado)'
+    detail: 'Average Score: 92.50 / 100.00 · Participant in Regional-level Physics Olympiad (2022)'
   }
 ];
