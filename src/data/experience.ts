@@ -14,7 +14,7 @@ export const experienceData: ExperienceItem[] = [
   {
     role: 'Teaching Assistant: Algorithms and Programming',
     company: 'Sam Ratulangi University',
-    period: 'March 2026 – Present',
+    period: 'March 2026 – May 2026',
     type: 'Teaching Assistant',
     location: 'Manado, North Sulawesi · On-site',
     points: [

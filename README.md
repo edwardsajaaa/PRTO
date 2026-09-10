@@ -8,7 +8,7 @@ Edward Benedict is an Informatics Engineering student at Sam Ratulangi Universit
 
 * Chairperson, UNSRAT IT Community (UNITY) (2026 – Present)
 * Software Engineer Intern, PT PLN (Persero) UPT Manado (Dec 2025 – Feb 2026)
-* Teaching Assistant for Algorithms and Programming, Sam Ratulangi University (Mar 2026 – Present)
+* Teaching Assistant for Algorithms and Programming, Sam Ratulangi University (Mar 2026 – May 2026)
 * Teaching Assistant for Database Technology, Sam Ratulangi University (Aug 2025 – Dec 2025)
 * 1st Place Winner, Student Digital Innovation Competition (LIDM) 2025
 
