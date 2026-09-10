@@ -84,9 +84,22 @@ export function ExperienceSection() {
                       </p>
                     )}
 
-                    <p className="text-zinc-400 leading-relaxed max-w-2xl text-sm md:text-base">
-                      {item.description}
-                    </p>
+                    {item.description && (
+                      <p className="text-zinc-400 leading-relaxed max-w-2xl text-sm md:text-base">
+                        {item.description}
+                      </p>
+                    )}
+
+                    {item.points && item.points.length > 0 && (
+                      <ul className="space-y-2 pt-1 max-w-2xl">
+                        {item.points.map((point, ptIdx) => (
+                          <li key={ptIdx} className="flex items-start gap-2.5 text-zinc-400 text-sm md:text-base leading-relaxed">
+                            <span className="w-1.5 h-1.5 rounded-full bg-blue-400/80 mt-2 shrink-0" />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
 
                     {/* Tech stack pills */}
                     {item.technologies && item.technologies.length > 0 && (
