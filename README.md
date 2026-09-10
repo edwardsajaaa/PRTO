@@ -1,119 +1,103 @@
-# Edward Benedict — Personal Portfolio
+# Edward Benedict | Personal Portfolio
 
-Website portofolio profesional milik **Edward Benedict**, dirancang untuk menampilkan rekam jejak, proyek, pengalaman kerja, serta keahlian teknis di bidang *Game Development*, *Software Engineering*, *Web*, dan *Mobile Development*.
+Personal portfolio website of Edward Benedict, designed to highlight project showcases, professional experience, leadership, and technical skills across Game Development, Software Engineering, and Interactive Digital Media.
 
----
+## About
 
-## 👨‍💻 Tentang Pemilik Portofolio
+Edward Benedict is an Informatics Engineering student at Sam Ratulangi University (UNSRAT) with an academic focus on software engineering, database architectures, and interactive 3D computing.
 
-**Edward Benedict** adalah mahasiswa Teknik Informatika di **Universitas Sam Ratulangi (UNSRAT)** yang berfokus pada pengembangan produk digital interaktif, rekayasa perangkat lunak, dan game development.
+* Chairperson, UNSRAT IT Community (UNITY) (2026 – Present)
+* Software Engineer Intern, PT PLN (Persero) UPT Manado (Dec 2025 – Feb 2026)
+* Teaching Assistant for Algorithms and Programming, Sam Ratulangi University (Mar 2026 – Present)
+* Teaching Assistant for Database Technology, Sam Ratulangi University (Aug 2025 – Dec 2025)
+* 1st Place Winner, Student Digital Innovation Competition (LIDM) 2025
 
-- 🏆 **Chairperson** — UNSRAT IT Community (UNITY) (2026 - Sekarang)
-- 👨‍🏫 **Teaching Assistant** — Algoritma & Pemrograman serta Teknologi Basis Data di UNSRAT
-- 💼 **Engineer Intern** — PT PLN (Persero) (Des 2025 - Feb 2026)
-- 🎮 **Game Programmer & Project Manager** — Unity Engine (C#) & ShaderLab
+## Key Highlights & Features
 
----
+1. Interactive 3D Card
+   Interactive mouse-tracking profile card with spring physics and ambient illumination built using Framer Motion and modern CSS.
 
-## ✨ Fitur & Bagian Portofolio
+2. Timeline and Experience
+   Chronological timeline covering software engineering internships, academic teaching assistantships, competitive programming achievements, and community leadership roles.
 
-Website ini dirancang dengan estetika *dark futuristic* dan interaktivitas yang halus:
+3. Academic Background
+   Detailed educational trajectory at Sam Ratulangi University (Informatics Engineering, GPA 3.90/4.00) and SMA Negeri 1 Manado (MIPA, Average Score 92.50/100.00).
 
-1. **Hero Section & Interactive 3D Card**
-   - Kartu profil 3D interaktif yang merespons pergerakan kursor mouse (*spring physics*) dengan efek *glow ambient*.
-   - Badge keahlian *Game & XR Dev* dan identitas akademis *UNSRAT Informatics*.
-   - Tombol indikator *Scroll Down* otomatis ke linimasa pengalaman.
+4. Technical Arsenal and GitHub Statistics
+   Language usage metrics derived from GitHub along with categorized tools covering Game Development, Web, Mobile, Databases, and Systems.
 
-2. **Timeline & Experience**
-   - Riwayat pekerjaan, asisten dosen, kepengurusan organisasi, dan magang profesional yang terstruktur secara kronologis.
-   - Status aktif (*Present indicator* dengan glowing dot) dan label kategori keahlian per posisi.
+5. Direct Communication Channels
+   Quick-access professional communication channels including direct email, LinkedIn, WhatsApp, and downloadable Curriculum Vitae (PDF).
 
-3. **Academic Background**
-   - Informasi latar belakang pendidikan di Fakultas Teknik Universitas Sam Ratulangi serta rekam jejak akademis.
+## Project Architecture
 
-4. **Skills & GitHub Arsenal**
-   - Visualisasi statistik bahasa pemrograman yang paling sering digunakan berdasarkan data GitHub.
-   - *Tech Arsenal badges* yang dikelompokkan berdasarkan kategori: *Game Engine & 3D, Web Frontend & Backend, Mobile, Database, VCS, serta Data Science & IoT*.
-
-5. **Contact & Social Connect**
-   - Akses cepat untuk kolaborasi dan rekrutmen via email langsung (`edwardbene07@gmail.com`).
-   - Kartu tautan media sosial dan profesional (LinkedIn, GitHub, Instagram, Twitter) dengan efek border gradient interaktif.
-
----
-
-## 📁 Struktur Arsitektur Modular
-
-Struktur proyek telah dimodularisasi agar mudah dikelola dan diperbarui:
+The codebase follows a modular directory layout separating data models, isolated UI sections, and application routing:
 
 ```text
 portofolio/
 ├── src/
-│   ├── app/                      # App Router Next.js
-│   │   ├── layout.tsx            # Root layout & font Geist
-│   │   ├── page.tsx              # Halaman utama (komposisi modul bersih)
-│   │   └── globals.css           # Styling global & efek glow neon
+│   ├── app/                      # Next.js App Router
+│   │   ├── layout.tsx            # Global layout, fonts, and metadata
+│   │   ├── page.tsx              # Root page composed of section modules
+│   │   └── globals.css           # Global stylesheets and theme tokens
 │   ├── components/
 │   │   ├── navigation/
-│   │   │   └── Navbar.tsx        # Navbar responsif & mobile drawer
+│   │   │   └── Navbar.tsx        # Responsive header with smooth navigation and CV download
 │   │   ├── sections/
-│   │   │   ├── HeroSection.tsx       # Bagian pengantar hero
-│   │   │   ├── ProfileCard3D.tsx     # Komponen kartu 3D tilt
-│   │   │   ├── ExperienceSection.tsx # Linimasa pengalaman & edukasi
-│   │   │   ├── SkillsSection.tsx     # Statistik skill & tech arsenal
-│   │   │   ├── ContactSection.tsx    # Bagian kontak & media sosial
-│   │   │   └── index.ts              # Barrel export sections
-│   │   └── ui/                   # Komponen UI dasar (button, card)
-│   ├── data/                     # Sumber data terisolasi (mudah di-edit)
-│   │   ├── experience.ts         # Data riwayat kerja & organisasi
-│   │   ├── education.ts          # Data pendidikan
-│   │   ├── skills.ts              # Data statistik bahasa & arsenal tools
-│   │   └── index.ts              # Barrel export data
-│   └── lib/                      # Utility functions
-├── content/                      # Konten artikel & dokumentasi MDX
-└── public/                       # Aset gambar & profil
+│   │   │   ├── HeroSection.tsx       # Introduction hero section
+│   │   │   ├── ProfileCard3D.tsx     # 3D interactive tilt profile card
+│   │   │   ├── ExperienceSection.tsx # Career and academic background timeline
+│   │   │   ├── SkillsSection.tsx     # Language metrics and categorized arsenal
+│   │   │   ├── ContactSection.tsx    # Communication endpoints and social links
+│   │   │   └── index.ts              # Section barrel export
+│   │   └── ui/                   # Primitive design system components
+│   ├── data/                     # Decoupled data layer
+│   │   ├── experience.ts         # Career milestones and organizational records
+│   │   ├── education.ts          # Academic background and credentials
+│   │   ├── skills.ts              # Language statistics and technology tools
+│   │   └── index.ts              # Data barrel export
+│   └── lib/                      # Core utility functions
+├── content/                      # MDX publications and project documentation
+└── public/                       # Static public assets (images, CV document)
 ```
 
----
+## Getting Started
 
-## 🚀 Menjalankan Portofolio Secara Lokal
+### Prerequisites
 
-Pastikan [Node.js](https://nodejs.org/) sudah terinstal di komputer Anda.
+Node.js (version 18 or higher) and npm installed on your system.
 
-1. **Clone repository & masuk ke direktori:**
+### Local Development
+
+1. Clone the repository:
    ```bash
    git clone https://github.com/edwardsajaaa/PRTO.git
    cd portofolio
    ```
 
-2. **Instal seluruh dependensi:**
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-3. **Jalankan server development:**
+3. Run the development server:
    ```bash
    npm run dev
    ```
 
-4. **Buka browser:**
-   Akses `http://localhost:3000` untuk melihat website secara langsung.
+4. Open your browser and navigate to `http://localhost:3000`.
 
-5. **Build untuk produksi:**
-   ```bash
-   npm run build
-   npm run start
-   ```
+### Production Build
 
----
+```bash
+npm run build
+npm run start
+```
 
-## 📬 Kontak & Kolaborasi
+## Contact
 
-- **Email**: [edwardbene07@gmail.com](mailto:edwardbene07@gmail.com)
-- **LinkedIn**: [Edward Benedict](https://www.linkedin.com/in/edwardbenedict)
-- **GitHub**: [@edwardsajaaa](https://github.com/edwardsajaaa)
-- **Instagram**: [@edwardsajaaa](https://instagram.com/edwardsajaaa)
-- **WhatsApp**: [+62 895 2917 5850](https://wa.me/6289529175850)
-
----
-
-&copy; 2026 Edward Benedict. All rights reserved.
+* Email: edwardbene07@gmail.com
+* LinkedIn: https://www.linkedin.com/in/edwardbenedict
+* GitHub: https://github.com/edwardsajaaa
+* Instagram: https://instagram.com/edwardsajaaa
+* WhatsApp: https://wa.me/6289529175850
