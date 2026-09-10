@@ -10,7 +10,6 @@ const navLinks = [
   { name: 'Experience', href: '#experience' },
   { name: 'Skills', href: '#skills' },
   { name: 'Contact', href: '#contact' },
-  { name: 'Resume', href: '/resume', isRoute: true },
 ];
 
 export function Navbar() {
@@ -43,12 +42,7 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isRoute?: boolean) => {
-    if (isRoute) {
-      setIsOpen(false);
-      return;
-    }
-
+  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setIsOpen(false);
 
@@ -95,30 +89,16 @@ export function Navbar() {
           </a>
         </motion.div>
 
-        {/* Desktop Navigation Links & View CV */}
+        {/* Desktop Navigation Links & Action Buttons */}
         <div className="hidden md:flex items-center gap-8">
           <nav className="flex items-center gap-6">
             {navLinks.map((link) => {
-              const isActive = !link.isRoute && activeSection === link.href.replace('#', '');
-              if (link.isRoute) {
-                return (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className="text-sm font-medium text-zinc-400 hover:text-blue-400 transition-colors py-1 flex items-center gap-1.5"
-                  >
-                    <span>{link.name}</span>
-                    <span className="text-[10px] px-1.5 py-0.2 rounded bg-blue-500/20 text-blue-400 font-semibold border border-blue-500/30">
-                      Page
-                    </span>
-                  </Link>
-                );
-              }
+              const isActive = activeSection === link.href.replace('#', '');
               return (
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={(e) => handleScrollTo(e, link.href, link.isRoute)}
+                  onClick={(e) => handleScrollTo(e, link.href)}
                   className={`text-sm font-medium transition-all relative py-1 ${
                     isActive
                       ? 'text-white'
@@ -139,7 +119,7 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-3 pl-4 border-l border-zinc-800">
-            {/* View / Download CV Button */}
+            {/* View CV Button (CTA) */}
             <Link
               href="/resume"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-blue-600/20 text-white border border-white/15 hover:border-blue-400/50 hover:text-blue-400 transition-all hover:shadow-[0_0_16px_rgba(59,130,246,0.25)] active:scale-95"
@@ -185,30 +165,12 @@ export function Navbar() {
           >
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => {
-                if (link.isRoute) {
-                  return (
-                    <Link
-                      key={link.name}
-                      href={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className="flex items-center justify-between py-2.5 px-4 rounded-xl text-sm font-medium text-zinc-300 hover:bg-white/5 hover:text-white transition-all"
-                    >
-                      <span className="flex items-center gap-2">
-                        <FileText className="w-4 h-4 text-blue-400" />
-                        {link.name} (CV)
-                      </span>
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">
-                        New Page
-                      </span>
-                    </Link>
-                  );
-                }
                 const isActive = activeSection === link.href.replace('#', '');
                 return (
                   <a
                     key={link.name}
                     href={link.href}
-                    onClick={(e) => handleScrollTo(e, link.href, link.isRoute)}
+                    onClick={(e) => handleScrollTo(e, link.href)}
                     className={`flex items-center justify-between py-2.5 px-4 rounded-xl text-sm font-medium transition-all ${
                       isActive
                         ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20 font-semibold'
