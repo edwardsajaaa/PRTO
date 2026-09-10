@@ -5,18 +5,8 @@ import { Linkedin, Instagram, Phone, Award, Trophy, Target, Star } from 'lucide-
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-20 bg-zinc-900/50 relative overflow-hidden">
-      {/* Background Pattern/Texture */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        />
-      </div>
-
-      <div className="container mx-auto px-8 relative z-10">
+    <section id="contact" className="py-24 border-t border-zinc-800/80">
+      <div className="container mx-auto px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Left - CTA */}
           <motion.div
@@ -197,6 +187,11 @@ export function ContactSection() {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Footer Copyright */}
+        <div className="pt-8 text-center text-xs text-zinc-600 font-mono">
+          &copy; {new Date().getFullYear()} Edward Benedict. All rights reserved.
+        </div>
       </div>
     </section>
   );
