@@ -3,7 +3,6 @@
 import { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import Image from 'next/image';
-import { Gamepad2 } from 'lucide-react';
 
 export function ProfileCard3D() {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -90,29 +89,6 @@ export function ProfileCard3D() {
 
         {/* Soft gradient vignette at edges */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none" />
-
-        {/* Floating Badge 1: Game & XR Dev (Top Right) */}
-        <div
-          style={{ transform: 'translateZ(40px)' }}
-          className="absolute top-4 right-4 bg-zinc-900/85 backdrop-blur-md border border-zinc-700/60 px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-lg"
-        >
-          <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-          <span className="text-xs font-semibold text-zinc-200">Game & XR Dev</span>
-        </div>
-
-        {/* Floating Badge 2: UNSRAT Informatics (Bottom Left) */}
-        <div
-          style={{ transform: 'translateZ(40px)' }}
-          className="absolute bottom-4 left-4 bg-zinc-900/85 backdrop-blur-md border border-zinc-700/60 px-3.5 py-2 rounded-xl flex items-center gap-2.5 shadow-lg"
-        >
-          <div className="w-7 h-7 rounded-lg bg-blue-500/20 border border-blue-400/30 flex items-center justify-center text-blue-400">
-            <Gamepad2 className="w-4 h-4" />
-          </div>
-          <div>
-            <p className="text-[10px] text-zinc-400 uppercase tracking-wider font-medium">Informatics</p>
-            <p className="text-xs font-bold text-white">Sam Ratulangi Univ</p>
-          </div>
-        </div>
       </motion.div>
     </motion.div>
   );
