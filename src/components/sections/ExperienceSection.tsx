@@ -1,8 +1,9 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Star } from 'lucide-react';
+import { Star, FileText } from 'lucide-react';
 import { experienceData, educationData } from '@/data';
 
 export function ExperienceSection() {
@@ -141,12 +142,22 @@ export function ExperienceSection() {
             className="pt-12"
           >
             <div className="space-y-8">
-              <div className="space-y-4">
-                <p className="text-sm text-zinc-400 tracking-widest uppercase">Education</p>
-                <h3 className="text-3xl md:text-4xl font-bold">Academic Background</h3>
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                <div className="space-y-3">
+                  <p className="text-sm text-zinc-400 tracking-widest uppercase">Education</p>
+                  <h3 className="text-3xl md:text-4xl font-bold">Academic Background</h3>
+                </div>
+
+                <Link
+                  href="/resume"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium text-xs shadow-lg shadow-blue-500/20 transition-all hover:scale-105 active:scale-95 shrink-0"
+                >
+                  <FileText className="w-3.5 h-3.5" />
+                  <span>View Full CV / Resume</span>
+                </Link>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-8 mt-8">
+              <div className="grid md:grid-cols-2 gap-8 mt-8">
                 {educationData.map((item, index) => (
                   <motion.div
                     key={index}
